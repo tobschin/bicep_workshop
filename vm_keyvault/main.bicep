@@ -12,18 +12,18 @@ param publicIpAddressSku string
 param pipDeleteOption string
 param virtualMachineName string
 param virtualMachineComputerName string
-param virtualMachineRG string
 param osDiskType string
 param osDiskDeleteOption string
+@allowed(['Standard_B1s'])
 param virtualMachineSize string
 param nicDeleteOption string
 param adminUsername string
 
 @secure()
+@minLength(12)
 param adminPassword string
 
 var nsgId = resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', networkSecurityGroupName)
-var vnetName = virtualNetworkName
 var vnetId = resourceId(resourceGroup().name, 'Microsoft.Network/virtualNetworks', virtualNetworkName)
 var subnetRef = '${vnetId}/subnets/${subnetName}'
 

@@ -5,7 +5,7 @@
 $ az bicep install
 
 # set variables
-$ LOCATION=eastus2
+$ LOCATION=eastus
 $ RG=my-group-name
 $ NAME=rollout01
 
